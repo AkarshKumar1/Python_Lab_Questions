@@ -1,0 +1,25 @@
+# Two Sum Problem
+
+def two_sum(nums, target):
+    seen = {}
+
+    for i in range(len(nums)):
+        remaining = target - nums[i]
+
+        if remaining in seen:
+            return [seen[remaining], i]
+
+        seen[nums[i]] = i
+
+
+# ----------- Hard-coded Input -----------
+nums = [2, 7, 11, 15]
+target = 9
+
+# ----------- Function Call -----------
+result = two_sum(nums, target)
+
+# ----------- Output -----------
+print("Array:", nums)
+print("Target:", target)
+print("Indices of two numbers:", result)
